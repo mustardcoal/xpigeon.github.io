@@ -3,117 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xpigeon.uk - The World's Hottest Pigeon Videos</title>
+    <title>xpigeon.uk - High-Def Urban Woodies</title>
     <style>
-        body { background-color: #0b0b0b; color: #ccc; font-family: Helvetica, liberty-sans; margin: 0; }
+        body { background-color: #0b0b0b; color: #ccc; font-family: Arial, sans-serif; margin: 0; overflow-x: hidden; }
         header { background-color: #1b1b1b; padding: 10px 20px; display: flex; align-items: center; border-bottom: 2px solid #d40000; position: sticky; top: 0; z-index: 100; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         .logo-img { height: 40px; margin-right: 10px; }
         .logo-text { color: #fff; font-size: 24px; font-weight: bold; }
         .logo-text span { color: #d40000; }
 
-        /* Navigation Tabs */
         .tabs-bar { background: #181818; padding: 0 20px; display: flex; border-bottom: 1px solid #333; }
         .tab { padding: 15px 25px; cursor: pointer; font-weight: bold; border-bottom: 3px solid transparent; transition: 0.3s; }
         .tab:hover { color: #fff; background: #222; }
         .tab.active { border-bottom: 3px solid #d40000; color: #fff; }
 
-        main { padding: 20px; max-width: 1200px; margin: auto; }
-        .content-section { display: none; }
-        .content-section.active { display: block; }
+        main { padding: 20px; max-width: 1200px; margin: auto; min-height: 70vh; }
+        .page { display: none; }
+        .page.active { display: block; }
 
-        /* Video Grid */
-        h2 { border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
+        /* Video/Live Player Area */
+        .player-container { background: #000; width: 100%; aspect-ratio: 16/9; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; border: 1px solid #333; }
+        .player-info { padding: 15px; background: #151515; border-radius: 4px; margin-bottom: 30px; }
+
+        /* Grid UI */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .video-card { background: #1b1b1b; border-radius: 4px; overflow: hidden; border: 1px solid #333; cursor: pointer; transition: 0.2s; }
-        .video-card:hover { border-color: #666; }
-        .thumb-placeholder { width: 100%; height: 160px; background: #222; display: flex; align-items: center; justify-content: center; position: relative; }
-        .duration { position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.8); padding: 2px 5px; font-size: 11px; color: #fff; }
-        .video-info { padding: 10px; font-size: 14px; color: #eee; }
+        .video-card { background: #1b1b1b; border-radius: 4px; overflow: hidden; border: 1px solid #333; cursor: pointer; }
+        .thumb-placeholder { width: 100%; height: 160px; background: #222; display: flex; align-items: center; justify-content: center; position: relative; font-weight: bold; }
+        .video-info { padding: 10px; font-size: 14px; }
 
-        /* Ad Slots */
-        .ad-banner { margin: 30px 0; border: 1px solid #444; padding: 25px; text-align: center; border-radius: 4px; background: #151515; }
-        .ad-link { color: #ff9900; font-size: 20px; font-weight: bold; text-decoration: none; display: block; }
-        .ad-subtext { font-size: 11px; color: #666; margin-top: 5px; }
+        /* Ad Styling */
+        .ad-banner { margin: 30px 0; border: 1px solid #444; padding: 25px; text-align: center; background: #151515; }
+        .ad-link { color: #ff9900; font-size: 20px; font-weight: bold; text-decoration: none; }
 
         footer { background: #111; padding: 50px 20px; text-align: center; border-top: 1px solid #333; margin-top: 50px; }
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: #888; margin: 0 15px; text-decoration: none; font-size: 13px; }
-        .footer-links a:hover { color: #d40000; }
-        .coffee-btn { background: #ffdd00; color: #000; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; }
-        .legal-notice { font-size: 10px; color: #444; margin-top: 40px; line-height: 1.5; }
+        .footer-links a { color: #888; margin: 0 15px; text-decoration: none; font-size: 13px; cursor: pointer; }
+        .legal-notice { font-size: 11px; color: #555; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="/" class="logo-box">
+    <a href="#" onclick="showPage('home')" class="logo-box">
         <img src="xpigeonlogo.png" class="logo-img" alt="Logo">
         <div class="logo-text"><span>x</span>pigeon</div>
     </a>
 </header>
 
 <div class="tabs-bar">
-    <div class="tab active" onclick="showTab('videos')">VIDEOS</div>
-    <div class="tab" onclick="showTab('livecams')">LIVECAMS</div>
+    <div class="tab active" id="tab-home" onclick="showPage('home')">VIDEOS</div>
+    <div class="tab" id="tab-live" onclick="showPage('live')">LIVECAMS</div>
 </div>
 
 <main>
-    <div id="videos" class="content-section active">
+    <div id="page-home" class="page active">
         <h2>Trending Free Woodies</h2>
         <div class="video-grid">
-            <div class="video-card">
-                <div class="thumb-placeholder"> [PREVIEW IMAGE HERE] <span class="duration">04:20</span> </div>
+            <div class="video-card" onclick="playVideo('Greggs Roll Devour', 'dQw4w9WgXcQ')">
+                <div class="thumb-placeholder">COONING IN 4K</div>
                 <div class="video-info">Massive Woodpigeon Devours Greggs Roll</div>
             </div>
-            <div class="video-card">
-                <div class="thumb-placeholder"> [PREVIEW IMAGE HERE] <span class="duration">12:05</span> </div>
+            <div class="video-card" onclick="playVideo('Bread Pecking POV', 'example_id')">
+                <div class="thumb-placeholder">POV BREAD</div>
                 <div class="video-info">POV: You are the Birdseed</div>
             </div>
         </div>
     </div>
 
-    <div id="livecams" class="content-section">
+    <div id="page-player" class="page">
+        <div class="player-container" id="video-frame">
+            <p>Loading Pigeon Content...</p>
+        </div>
+        <div class="player-info">
+            <h2 id="playing-title">Video Title</h2>
+            <p>Views: 1.2M | Rating: 98% (Highly Cooed)</p>
+        </div>
+    </div>
+
+    <div id="page-live" class="page">
         <h2>Live Bird Action</h2>
+        <div class="player-container">
+            <p style="color: #d40000; font-weight: bold;">LIVECAM OFFLINE - CHECK BACK ON WEDNESDAY</p>
+        </div>
+        <p>Current Feed: Trafalgar Square (Delayed due to Spite)</p>
+    </div>
+
+    <div id="page-legal" class="page">
+        <h2>Legal / OSA Protest</h2>
+        <p>This site is a direct protest against the Great British Firewall. We believe in the freedom to view pigeons without showing a passport.</p>
+        <p>All pigeons featured are of legal age (in bird years).</p>
+    </div>
+
+    <div id="page-hot" class="page">
+        <h2 style="color: #ff9900;">🔥 HOT PIGEONS IN DOVER 🔥</h2>
+        <p>There are 4 woodpigeons within 0.5 miles of you right now looking for bread.</p>
         <div class="video-grid">
             <div class="video-card">
-                <div class="thumb-placeholder" style="height: 300px; background: #000;">
-                    <p>LIVECAM OFFLINE - COMING SOON</p>
-                    </div>
-                <div class="video-info"><b>LIVE:</b> Trafalgar Square 24/7 Feed</div>
+                <div class="thumb-placeholder">LOCAL BIRD</div>
+                <div class="video-info">Single Woodie (3yrs) - Likes Chips</div>
             </div>
         </div>
     </div>
 
     <div class="ad-banner">
-        <a href="https://hotpigeonsnearme.xpigeon.uk" class="ad-link">🔥 HOT PIGEONS IN YOUR AREA🔥</a>
-        <div class="ad-subtext">Meet Hot Pigeons</div>
+        <a href="#" onclick="showPage('hot')" class="ad-link">🔥 HOT PIGEONS NEAR YOU WANT TO PEAK! 🔥</a>
     </div>
 </main>
 
 <footer>
     <div class="footer-links">
-        <a href="https://legal.xpigeon.uk">LEGAL</a>
-        <a href="https://hotpigeonsnearme.xpigeon.uk">Birds In Your Area</a>
-        <a href="#">ADVERTISE</a>
+        <a onclick="showPage('legal')">LEGAL / OSA PROTEST</a>
+        <a onclick="showPage('hot')">LOCAL BIRDS</a>
+        <a href="https://www.buymeacoffee.com/yourlink">BUY ME A BIRDSEED</a>
     </div>
     
-    <a href="https://www.buymeacoffee.com/yourlink" class="coffee-btn">☕ Buy Me a Birdseed</a>
-
     <div class="legal-notice">
-        Xpigeonuk is a parody site hosting exclusively safe for work content therefore complies with the online safety act as well as the french SREN act
+        Xpigeonuk is a parody site hosting exclusively safe for work content therefore complies with the online safety act as well as the french SREN act. 
+        We have no affiliation with "Supreme Leaders" or polystyrene-based religions. All content is 100% avian.
     </div>
 </footer>
 
 <script>
-    function showTab(tabId) {
-        // Remove active class from all tabs and sections
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
         
-        // Add active class to selected tab and section
-        event.currentTarget.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
+        document.getElementById('page-' + pageId).classList.add('active');
+        if(pageId === 'home') document.getElementById('tab-home').classList.add('active');
+        if(pageId === 'live') document.getElementById('tab-live').classList.add('active');
+        window.scrollTo(0,0);
+    }
+
+    function playVideo(title, id) {
+        showPage('player');
+        document.getElementById('playing-title').innerText = title;
+        // Injecting an embed (YouTube placeholder used here)
+        document.getElementById('video-frame').innerHTML = 
+            `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
     }
 </script>
 
