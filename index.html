@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xpigeon.uk - The Best Free Woodies</title>
+    <title>xpigeon.uk - High-Def Urban Woodies</title>
     <style>
         body { background-color: #0b0b0b; color: #ccc; font-family: Arial, sans-serif; margin: 0; }
-        header { background-color: #1b1b1b; padding: 10px 20px; display: flex; align-items: center; border-bottom: 2px solid #d40000; }
+        header { background-color: #1b1b1b; padding: 10px 20px; display: flex; align-items: center; border-bottom: 2px solid #d40000; position: sticky; top: 0; z-index: 100; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         .logo-img { height: 40px; margin-right: 10px; }
         .logo-text { color: #fff; font-size: 24px; font-weight: bold; }
         .logo-text span { color: #d40000; }
-        
-        .main-container { display: flex; }
-        
-        /* Sidebar Researched Layout */
-        nav { width: 200px; background: #111; padding: 20px; min-height: 100vh; font-size: 14px; }
-        nav ul { list-style: none; padding: 0; }
-        nav li { padding: 10px 0; border-bottom: 1px solid #222; cursor: pointer; }
-        nav li:hover { color: #fff; }
-        .hot-tag { background: #d40000; color: #fff; padding: 2px 5px; border-radius: 3px; font-size: 10px; margin-left: 5px; }
+
+        /* Navigation Tabs */
+        .tabs-bar { background: #181818; padding: 0 20px; display: flex; border-bottom: 1px solid #333; }
+        .tab { padding: 15px 25px; cursor: pointer; font-weight: bold; border-bottom: 3px solid transparent; transition: 0.3s; }
+        .tab:hover { color: #fff; background: #222; }
+        .tab.active { border-bottom: 3px solid #d40000; color: #fff; }
+
+        main { padding: 20px; max-width: 1200px; margin: auto; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
 
         /* Video Grid */
-        main { flex-grow: 1; padding: 20px; }
-        h2 { border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .video-card { background: #1b1b1b; border-radius: 4px; overflow: hidden; border: 1px solid #333; }
-        .thumb-placeholder { width: 100%; height: 150px; background: #222; display: flex; align-items: center; justify-content: center; }
-        .video-info { padding: 10px; font-size: 13px; }
+        h2 { border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .video-card { background: #1b1b1b; border-radius: 4px; overflow: hidden; border: 1px solid #333; cursor: pointer; transition: 0.2s; }
+        .video-card:hover { border-color: #666; }
+        .thumb-placeholder { width: 100%; height: 160px; background: #222; display: flex; align-items: center; justify-content: center; position: relative; }
+        .duration { position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.8); padding: 2px 5px; font-size: 11px; color: #fff; }
+        .video-info { padding: 10px; font-size: 14px; color: #eee; }
 
-        /* Ads Wing */
-        .ad-slot { margin-top: 20px; border: 2px dashed #444; padding: 20px; text-align: center; border-radius: 8px; }
-        .ad-link { color: #ff9900; font-weight: bold; text-decoration: none; font-size: 18px; }
+        /* Ad Slots */
+        .ad-banner { margin: 30px 0; border: 1px solid #444; padding: 25px; text-align: center; border-radius: 4px; background: #151515; }
+        .ad-link { color: #ff9900; font-size: 20px; font-weight: bold; text-decoration: none; display: block; }
+        .ad-subtext { font-size: 11px; color: #666; margin-top: 5px; }
 
-        footer { background: #111; padding: 40px; text-align: center; border-top: 1px solid #333; margin-top: 50px; }
-        .sub-links a { color: #888; margin: 0 15px; text-decoration: none; font-size: 12px; }
-        .sub-links a:hover { color: #fff; }
-        .coffee-btn { background: #ffdd00; color: #000; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+        footer { background: #111; padding: 50px 20px; text-align: center; border-top: 1px solid #333; margin-top: 50px; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #888; margin: 0 15px; text-decoration: none; font-size: 13px; }
+        .footer-links a:hover { color: #d40000; }
+        .coffee-btn { background: #ffdd00; color: #000; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; }
+        .legal-notice { font-size: 10px; color: #444; margin-top: 40px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -48,52 +53,70 @@
     </a>
 </header>
 
-<div class="main-container">
-    <nav>
-        <ul>
-            <li>Newest Pigeons</li>
-            <li>Best Woodies</li>
-            <li>Liberty Rants <span class="hot-tag">HOT</span></li>
-            <li>Anti-OSA Protest</li>
-            <li>Confidential Support</li>
-        </ul>
-    </nav>
-
-    <main>
-        <h2>Trending Free Pigeon Videos</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="thumb-placeholder">
-                    <p>LIVECAM COMING SOON</p>
-                    </div>
-                <div class="video-info"><b>LIVE:</b> Pigeon Watch 24/7</div>
-            </div>
-
-            <div class="video-card">
-                <div class="thumb-placeholder"> [4K] Hardcore Cooing </div>
-                <div class="video-info"><b>08:45</b> | 100% Organic Bread Pecking</div>
-            </div>
-        </div>
-
-        <div class="ad-slot">
-            <p>ADVERTISEMENT</p>
-            <a href="https://hotpigeonsnearme.xpigeon.uk" class="ad-link"> HOT PIGEONS NEAR YOU!</a>
-            <p style="font-size: 10px; color: #666;">(Clicking this protests the Online Safety Act)</p>
-        </div>
-    </main>
+<div class="tabs-bar">
+    <div class="tab active" onclick="showTab('videos')">VIDEOS</div>
+    <div class="tab" onclick="showTab('livecams')">LIVECAMS</div>
 </div>
 
-<footer>
-    <div class="sub-links">
-        <a href="https://liberty.xpigeon.uk">LIBERTY</a>
-        <a href="https://legal.xpigeon.uk">LEGAL</a>
-        <a href="https://livecam.xpigeon.uk">LIVECAMS</a>
-        <a href="https://hotpigeonsnearme.xpigeon.uk">LOCAL BIRDS</a>
+<main>
+    <div id="videos" class="content-section active">
+        <h2>Trending Free Woodies</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="thumb-placeholder"> [PREVIEW IMAGE HERE] <span class="duration">04:20</span> </div>
+                <div class="video-info">Massive Woodpigeon Devours Greggs Roll</div>
+            </div>
+            <div class="video-card">
+                <div class="thumb-placeholder"> [PREVIEW IMAGE HERE] <span class="duration">12:05</span> </div>
+                <div class="video-info">POV: You are the Birdseed</div>
+            </div>
+        </div>
     </div>
-    <br>
+
+    <div id="livecams" class="content-section">
+        <h2>Live Bird Action</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="thumb-placeholder" style="height: 300px; background: #000;">
+                    <p>LIVECAM OFFLINE - COMING SOON</p>
+                    </div>
+                <div class="video-info"><b>LIVE:</b> Trafalgar Square 24/7 Feed</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-banner">
+        <a href="https://hotpigeonsnearme.xpigeon.uk" class="ad-link">🔥 HOT PIGEONS NEAR YOU WANT TO PEAK! 🔥</a>
+        <div class="ad-subtext">Clicking this is a protest against the Online Safety Act and the Great British Firewall.</div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="https://legal.xpigeon.uk">LEGAL / OSA PROTEST</a>
+        <a href="https://hotpigeonsnearme.xpigeon.uk">LOCAL BIRDS</a>
+        <a href="#">ADVERTISE</a>
+    </div>
+    
     <a href="https://www.buymeacoffee.com/yourlink" class="coffee-btn">☕ Buy Me a Birdseed</a>
-    <p style="font-size: 10px; color: #444; margin-top: 30px;">xpigeon.uk is a satirical protest site. We are not affiliated with any cults or polystyrene ball leaders.</p>
+
+    <div class="legal-notice">
+        xpigeon.uk is a satirical digital asset. We have no affiliation with "Supreme Leaders," polystyrene-based religions, or any cults. <br>
+        All content is 100% avian in nature. Respect the Woodies.
+    </div>
 </footer>
+
+<script>
+    function showTab(tabId) {
+        // Remove active class from all tabs and sections
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        
+        // Add active class to selected tab and section
+        event.currentTarget.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
 
 </body>
 </html>
