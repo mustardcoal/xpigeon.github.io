@@ -42,46 +42,46 @@
 <header>
     <a href="#" onclick="showSection('home')" class="logo-area">
         <img src="xpigeonlogo.png" class="logo-img">
-        <div><span>test</span> test</div>
+        <div><span>X</span>Pigeon</div>
     </a>
 </header>
 
 <div class="nav-tabs">
-    <div class="t-btn active" id="tab-home" onclick="showSection('home')">INSERT HERE</div>
-    <div class="t-btn" id="tab-live" onclick="showSection('live')">INSERT HERE</div>
+    <div class="t-btn active" id="tab-home" onclick="showSection('home')">Videos</div>
+    <div class="t-btn" id="tab-live" onclick="showSection('live')">Cam Pigeons</div>
 </div>
 
 <main>
     <div id="view-home" class="view active">
-        <h2>INSERT HERE</h2>
+        <h2>Videos</h2>
         <div class="grid" id="video-list">
             </div>
     </div>
 
     <div id="view-player" class="view">
         <div class="player-wrapper" id="video-portal"></div>
-        <h2 id="current-title">INSERT HERE</h2>
+        <h2 id="current-title">Pigeons</h2>
         <button onclick="showSection('home')" style="background:#333; color:#fff; border:0; padding:10px 20px; cursor:pointer;">INSERT HERE</button>
     </div>
 
     <div id="view-live" class="view">
-        <h2>INSERT HERE</h2>
+        <h2>Live</h2>
         <div class="player-wrapper" id="live-portal">
             </div>
     </div>
 </main>
 
 <footer>
-    <a href="INSERT_COFFEE_URL_HERE" class="coffee-link">INSERT HERE</a>
-    <div class="legal">INSERT HERE</div>
+    <a href="INSERT_COFFEE_URL_HERE" class="coffee-link">Buy Me Seeds</a>
+    <div class="legal">This is a parody site which complies with the uk online safety act this means the website has no user to user chat or amy nsfw content everything here is completely sfw </div>
 </footer>
 
 <script>
     /* --- DATA BOX: ONLY CHANGE STUFF HERE --- */
     const VIDEO_DATA = [
-        { title: "INSERT HERE", dm_id: "x8x7v6u" }, 
-        { title: "INSERT HERE", dm_id: "x8x7v6u" },
-        { title: "INSERT HERE", dm_id: "x8x7v6u" }
+        { title: "2 Birds 1 Cup", dm_id: "x8x7v6u" }, 
+        { title: "Young Step Pigeons Get Seedy", dm_id: "x8x7v6u" },
+        { title: "British Birds Eat Fat Balls!!!", dm_id: "x8x7v6u" }
     ];
 
     const LIVE_DM_URL = "https://www.dailymotion.com/embed/video/x8x7v6u"; // CHANGE THIS FOR LIVE
@@ -92,7 +92,7 @@
     VIDEO_DATA.forEach((vid, index) => {
         container.innerHTML += `
             <div class="card" onclick="openPlayer('${vid.title}', '${vid.dm_id}')">
-                <div class="thumb">INSERT HERE</div>
+                <div class="thumb">Birds</div>
                 <div class="meta">${vid.title}</div>
             </div>
         `;
