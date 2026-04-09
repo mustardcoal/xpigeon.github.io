@@ -1,13 +1,8 @@
-<head>
-<meta charset="UTF-8">
-<title>XPigeon</title>
-<link rel="icon" type="image/svg+xml" href="logo.svg">
-<style> 
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>XPigeon</title><link rel="icon" type="image/svg+xml" href="logo.svg"><style>
 :root{--r:#d40000;--b:#0070bb;--g:#f2f2f2;--e:#e0e0e0}
 body{font:13px Arial,sans-serif;margin:0;background:var(--g);display:flex;flex-direction:column;height:100vh;overflow:hidden}
 header{background:#1a1a1a;padding:10px 20px;color:#fff;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--r);flex-shrink:0}
-.l{font-size:24px;font-weight:800;cursor:pointer;display:flex;align-items:center}
-.l span{color:var(--r)}
+.l{font-size:24px;font-weight:800;cursor:pointer}.l span{color:var(--r)}
 .m{text-align:right;font-size:10px;color:#888;text-transform:uppercase}
 .a{display:block;background:var(--r);color:#fff;padding:5px 15px;text-decoration:none;font-weight:700;margin-top:2px;border-radius:2px;border-bottom:2px solid #900}
 .w{display:flex;flex:1;overflow:hidden}
@@ -24,5 +19,12 @@ main{flex:1;max-width:1000px}.box{background:#fff;border:1px solid var(--e);padd
 .bt{display:block;margin-top:7px;font-weight:700;color:var(--b);font-size:13px}
 iframe{width:100%;height:100%;border:0}.h{display:none}
 h2{font-size:18px;margin:0 0 10px;border-bottom:1px solid #eee;text-transform:uppercase}
-</style>
-</head>
+</style></head><body><header><div class="l" onclick="go('h')"><span>X</span>PIGEON</div><div class="m">Free Photos<a href="https://photos.xpigeon.uk" class="a">PHOTOS</a></div></header>
+<div class="w"><nav id="n"></nav><div class="v"><div class="r"><main><div class="box"><h2 id="ti"></h2><div id="gr" class="g"></div><div id="pv" class="h"><div id="vi" style="width:100%;aspect-ratio:16/9;background:#000"></div><button onclick="go('h')" style="margin-top:15px;font-weight:700;cursor:pointer">HOME</button></div></div></main>
+<aside class="s"><small style="color:#999;font-weight:700">AD</small><a href="#" class="f"><img src="https://via.placeholder.com/240x600?text=240x600+Ad"></a></aside></div></div></div><script>
+const D={'h':[['Step-Birds Hungry For Fat Balls','x8m6m01'],['Young Pigeon Pecks Big Sausage Roll','x8m6m02']],'r':[['PUBLIC!!! Pigeon Pecks Bread','x8m6m04']],'f':[['Hot YOUNG! Birds Left To Feed On Tree Branch','x8m6m05']],'s':[['SEED SHOT: Hungry Pigeons','x8m6m06']]},T={'h':'New','r':'Street Birds','f':'Tree Birds','s':'Seedy'},$=i=>document.getElementById(i);
+Object.keys(T).forEach(k=>{$('n').innerHTML+=`<div class="b" onclick="go('${k}')">${T[k]}</div>`});
+function go(k){$('pv').className='h';$('gr').className='g';$('gr').innerHTML='';$('ti').innerText=T[k];D[k].forEach(v=>{$('gr').innerHTML+=`<div class="c" onclick="sh('${v[0]}','${v[1]}')"><div class="t">XPIGEON</div><span class="bt">${v[0]}</span></div>`})}
+function sh(t,i){$('gr').className='h';$('ti').innerText="Watching Now";$('pv').className='';$('vi').innerHTML=`<iframe src="https://www.dailymotion.com/embed/video/${i}?autoplay=1&ui-logo=false" allowfullscreen></iframe>`}
+go('h');
+</script></body></html>
